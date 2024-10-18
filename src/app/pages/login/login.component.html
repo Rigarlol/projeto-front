@@ -1,0 +1,60 @@
+<div class="toolbar" role="banner">
+  <img width="40" alt="Logo" src=" "> <span>Home</span>
+</div>
+
+<body>
+  <ng-container *ngIf="mostrar">
+    <div class="modal" @modal>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" (click)="closeModal()">X</button>
+          <h2>Bem-vindo(a)</h2>
+          <p>Faça seu login para entrar na plataforma</p>
+        </div>
+
+        <section class="login-form">
+          <form [formGroup]="loginForm" class="form-container">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email" placeholder="Digite seu email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Senha</mat-label>
+              <input matInput type="password" formControlName="senha" placeholder="Digite sua senha" />
+            </mat-form-field>
+          </form>
+        </section>
+
+        <section class="btn-login">
+          <button class="text-btn">Login Tutor</button>
+          <button class="text-btn">Login Aluno</button>
+          <button class="text-btn">Criar Cadastro</button>
+        </section>
+      </div>
+      <ng-content></ng-content>
+      <div (click)="toggle()" @overlay class="overlay"></div>
+    </div>
+  </ng-container>
+</body>
+
+
+
+
+
+<!--
+<body>
+
+        <section class="btn-login">
+          <button class="text-btn">Login Tutor</button>
+          <button class="text-btn">Login Aluno</button>
+          <button class="text-btn">Criar Cadastro</button>
+        </section>
+      </div>
+    </div>
+    <ng-content></ng-content>
+    <div (click)="toggle()" @overlay class="overlay"></div>
+  </ng-container>
+</body>
+
+-->
